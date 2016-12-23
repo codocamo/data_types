@@ -1,19 +1,23 @@
 ;;DATA TYPES DATA STRUCTURES
-
-
-;;String
+;;BASIC ADATA TYPES FLY THROUGH THIS
+;;--------------------------------------------------------------------------------------String------------------------------------------------------------------------------
 "this is a string"
 
-;;Integer
+;;--------------------------------------------------------------------------------------Integer------------------------------------------------------------------------------
+;;basicaly a whole number
 1337
 
-;;Float
+;;--------------------------------------------------------------------------------------Float------------------------------------------------------------------------------
 3.7
 
-;;Keyword
+;;--------------------------------------------------------------------------------------Ratio------------------------------------------------------------------------------
+3/7
+
+;;--------------------------------------------------------------------------------------Keyword------------------------------------------------------------------------------
+;;like a string but can be called like a function when used in things like maps
 :this-is-a-keyword
 
-;;Map
+;;--------------------------------------------------------------------------------------Map------------------------------------------------------------------------------
 ;;Maps are key pair values
 {:first-name "future"
  :second-name, "me"}
@@ -41,7 +45,7 @@
 ((get addition-map "addition-function") 10 20)
 
 
-;;Vector
+;;--------------------------------------------------------------------------------------Vector------------------------------------------------------------------------------
 ;;Vectors are 0 indexed sequences
 [1 3 5 8]
 
@@ -63,8 +67,16 @@
 (get my-vector 5)
 (get my-vector 6)
 
+;;you can add to a vector by using the conj function, vectors add values to the end
+(def my-vector [1 2])
+(conj my-vector 30000000000)
 
-;;List
+;;note you cant access the conjed value because everything is immutable
+(get my-vector 0)
+(get my-vector 1)
+(get my-vector 2)
+
+;;--------------------------------------------------------------------------------------List------------------------------------------------------------------------------
 ;;lists are 0 indexed sequences
 '(1 5 7 8)
 
@@ -72,9 +84,31 @@
 
 (nth my-list 3)
 
-;;Hash set
-#{}
+;;you can add to a list by using the conj function, lists add values to the begining
+(def my-list '(1 2))
+(conj my-list 30000000000)
 
+;;note you cant access the conjed value because everything is immutable
+(nth my-list 0)
+(nth my-list 1)
+(nth my-list 2)
+
+;;--------------------------------------------------------------------------------------Set------------------------------------------------------------------------------
+;;sets are 1 indexed sequences
+#{1 2 3}
+
+(def my-set #{1 2 4})
+my-set
+
+(get my-set 1)
+
+;;you can add to a set by using the conj function, sets add values to the end
+(conj my-set 56)
+
+;;note you cant access the conjed value because everything is immutable
+(get my-set 1)
+(get my-set 2)
+(get my-set 3 )
 
 ;;conj
 ;vector
